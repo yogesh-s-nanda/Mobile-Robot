@@ -8,24 +8,38 @@ Author : Jogesh S Nanda
 Description : Controlles a 2 wheel differential drive robot to find a target space
       also uses obstracle avoidance to find a collision free path
 
+==========================================================================
+# Table of contents
+==========================================================================
+1. Introduction
+2. Design
 
-Function :
 
-============ functions ====================
 
-# motor_A_encoder ---> from the interupt function increment Variable " encoder_A_pos " each time it's called
-# motor_B_encoder ---> from the interupt function increment Variable " encoder_B_pos " each time it's called
+==========================================================================
+# 1. Introduction
+==========================================================================
 
-# distance_motor_A ---> Global Variable which gives the distance travelled by the Left Wheel
-# distance_motor_B ---> Global Variable which gives the distance travelled by the Right Wheel
+  A robot which can move from one point to other is called a mobile robot. Due to advancement
+in technology and industrial need to adapt to new changes in manufacturing methods and logistics
+robots are in huge demand. Mobile robots are widely used in logistics and material handling to cater
+faster and efficient movement of materials. These mobile robots which work autonomously deliver
+the product from one location to other. Algorithm from higher hierarchy transmits only the
+destination coordinates to these mobile robots.
 
-# distance_reset ---> reset the encoder counter
+  The mini-project done here is to get a hands on experience in building an autonomous mobile
+robot which can suit this demand. Differential drive robot is designed, build and tested in real world
+condition into which we give the position (x, y) coordinates to reach the destination avoiding
+unperceived obstacle.
 
-# robot_distance ---> gives the distance travelled by the robot during forward or reverse direction
+==========================================================================
+# 2. Design
+==========================================================================
 
-# robot_move ---> move the robot at distance X [in cm]
-# robot_turn_left ---> turn the robot at angle (anti-clockwise)
-# robot_turn_right ---> turn the robot at an anlge (clock-wise)
-# robot_stop ---> emergency STOP
+# Aim/ problem statement:
+  Drive the mobile robot to a specific goal location given by (X, Y) co-ordinates through
+Bluetooth. Robot has to move to this specific goal location avoiding obstacles.
 
-============= End =========================
+# Approach:
+  Goal location is reached by moving the robot in its axis at each time. Robot is first moved
+along y axis then its turned 90 degree left or right and then moved through x axis.
